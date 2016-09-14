@@ -1,0 +1,6 @@
+$container-width: 100%;
+$fons: white;
+
+$cols: 24;
+$espai: 0%;
+$una_col: (100% - ($espai * ($cols - 1))) / $cols;

@@ -1,0 +1,11 @@
+{
+  "name": "gridMauro",
+  "description": "Grid personalizat mauro",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^1.2.2"
+  }
+}

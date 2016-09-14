@@ -1,0 +1,72 @@
+
+@import "variables/variables";
+@import "mixins/mixins";
+
+
+.wrapper {
+  width: $container-width;
+  h1 {
+    color:red;
+  }
+}
+
+
+%separacioCaixes {
+  float:left;
+  margin-left: $espai;
+}
+
+
+.row {
+  @for $m from 1 through $cols {
+    .col-#{$m}{
+      @extend %separacioCaixes;
+    }
+  }
+  @for $i from 1 through $cols {
+    .col-#{$i} {
+      @include cols($una_col, $espai, $i);
+      @for $j from 1 through ($i - 1) {
+        @if $i > 1 and $j>=1{
+            .col-#{$j} {
+              @include sub_cols($una_col, $espai, $j, $i);
+          }
+        }
+
+      }
+    }
+  }
+  > :first-child,
+  .row > :first-child {
+    margin-left: 0;
+  }
+}
+
+.row:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 1326px;
+}
+.row {
+  background: #dedede;
+  margin-bottom: 20px;
+}
+.box {
+  height: 40px;
+  border: 1px solid black;
+  background-color: springgreen;
+}
+//RESET
+html, body {
+  margin: 0;
+  padding: 0;
+}
+body{
+  background: $fons;
+}

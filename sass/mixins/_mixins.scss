@@ -1,0 +1,11 @@
+
+@mixin cols($una_col, $espai, $num) {
+  width: ($una_col * $num) + ($espai * ($num - 1));
+}
+
+@mixin sub_cols($una_col, $espai, $num_child, $num_parent) {
+  $parent_size: ($una_col * $num_parent) + ($espai * ($num_parent - 1));
+  $child_size: ($una_col * $num_child) + ($espai * ($num_child - 1));
+  margin-left: ($espai / $parent_size) * 100%;
+  width: ($child_size / $parent_size) * 100%;
+}
